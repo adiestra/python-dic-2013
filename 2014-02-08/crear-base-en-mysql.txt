@@ -1,0 +1,3 @@
+CREATE DATABASE ferreteria;
+GRANT ALL ON ferreteria.* TO ferreteria@localhost IDENTIFIED BY 'ferreteria';
+FLUSH PRIVILEGES;
