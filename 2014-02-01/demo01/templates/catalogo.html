@@ -1,0 +1,28 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+<h1>Tienda 1<h1>
+<h2>Catalogo de productos<h2>
+
+{% if items %}
+  <ul>
+  {% for item in items %}
+   <li>
+     <ul>
+       <li><b>Categoria</b>: {{ item.categoria}}</li>
+       <li><b>Producto</b>: {{ item.producto}}</li>
+       <li><b>Descripción</b>: {{ item.descripcion|upper}}</li>
+       <li><b>Precio</b>: {{ item.precio}}</li>
+    </ul>
+   </li>
+  {% endfor %}
+  </ul>
+{% else %}
+<p>No hay items en el catálogo.</p>
+{% endif %}
+
+{{ fragmento_html|safe }}
+
+{% endblock %}
+
+{% block title %}Mi titulo personalizado{% endblock %}
