@@ -1,0 +1,7 @@
+Caso 1: Generar listado de dependencias
+
+(env)$ pip freeze > requirements.txt
+
+Caso 2: Instalar dependencias del proyecto
+
+(env)$ pip install -r requirements.txt

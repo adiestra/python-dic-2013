@@ -1,0 +1,35 @@
+Paso 1: Instalar South
+
+(env)$ pip install South
+
+Paso 2: Agregar South a las INSTALLED_APPS del proyecto
+
+INSTALLED_APPS = (
+  ...
+  'south'
+  ...
+)
+
+Paso 3: Crear tablas de South en la base de datos
+
+(env)$ python manage.py syncdb
+
+Paso 4: Empezar a usar South con una app
+
+(env)$ python manage.py schemamigration --initial <nombre_app>
+
+Esto crea una migración con prefijo 0001.
+
+Más información sobre South:
+
+http://south.readthedocs.org/en/latest/
+
+Paso 5: Ejecutar la migración
+
+(env)$ python manage.py migrate <nombre_app>
+
+Paso 6: Manajar cambios en los modelos
+
+(env)$ python manage.py schemamigration --auto <nonbre_app>
+
+Volver al paso 5 (ejecutar migración)

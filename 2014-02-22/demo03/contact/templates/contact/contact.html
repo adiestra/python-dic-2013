@@ -1,0 +1,52 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Formulario de contacto</title>
+  <meta name="description" content="Formulario de contacto">
+  <meta name="author" content="Adiestra">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <h1>Formulario de contacto</h1>
+  {% if completed %}
+  <p>Gracias. Su mensaje fue enviado exitosamente.</p>
+  <p>Si desea enviar otro mensaje, haga click <a href="{% url 'contact' %}"></a>.</p>
+  {% else %}
+  <form action="" method="POST">{% csrf_token %}
+  <table>
+  <tr>
+    <td>{{ form.sender.label }}<td>
+    <td>:</td>
+    <td>{{ form.sender }}{{ form.sender.errors }}</td>
+  </tr>
+    <tr>
+    <td>{{ form.subject.label }}<td>
+    <td>:</td>
+    <td>{{ form.subject }}{{ form.subject.errors }}</td>
+  </tr>
+    <tr>
+    <td>{{ form.message.label }}<td>
+    <td>:</td>
+    <td>{{ form.message }}{{ form.message.errors }}</td>
+  </tr>
+    <tr>
+    <td>{{ form.cc_myself.label }}<td>
+    <td>:</td>
+    <td>{{ form.cc_myself }}{{ form.cc_myself.errors }}</td>
+  </tr>
+  </table>
+  <p><input type="submit" value="Enviar correo" /></p>
+  </form>
+  {% endif %}
+  
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Login</title>
+  <meta name="description" content="Login">
+  <meta name="author" content="Adiestra">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <h1>Formulario de login</h1>
+  <form action="" method="POST">{% csrf_token %}
+  <table>
+  {{ form.as_table }}
+  </table>
+  <p><input type="submit" value="Iniciar" /></p>
+  </form>
+  
+</body>
+</html>
